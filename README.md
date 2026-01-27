@@ -39,7 +39,7 @@
 
 ### 1. リポジトリをクローン
 ```bash
-git clone <このリポジトリURL>
+git clone git@github.com:yukiya1620/coachtech-furima.git
 cd coachtech-furima/src
 ```
 ### 2. コンテナ起動
