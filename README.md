@@ -44,7 +44,7 @@ cd coachtech-furima/src
 ```
 ### 2. コンテナ起動
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 ### 3.依存インストール
 ```bash
@@ -59,6 +59,10 @@ docker compose exec app php artisan key:generate
 ```bash
 docker compose exec app php artisan migrate --seed
 ```
+
+※注意
+docker compose down -v はDBのデータ（volume）を削除します。DBが消えた場合は上記 migrate:fresh --seed で復旧できます。
+
 ### 6.ストレージ公開 (画像表示)
 ```bash
 docker compose exec app php artisan storage:link

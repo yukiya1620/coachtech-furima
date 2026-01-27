@@ -20,11 +20,8 @@ class PurchaseController extends Controller
 
         $paymentMethods = [
             'convenience' => 'コンビニ払い',
+            'credit' => 'クレジットカード',
         ];
-
-        if (!empty(config('services.stripe.secret'))) {
-            $paymentMethods['credit'] = 'クレジットカード';
-        }
 
         $user = auth()->user();
 
