@@ -1,0 +1,201 @@
+/* ===== ベース ===== */
+.container.purchase{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px 80px;
+}
+
+.purchase-grid{
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.purchase-left{
+  position: relative;
+  padding-right: 420px; /* 右BOX分の余白 */
+}
+
+/* 右BOXを右側に固定 */
+.purchase-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 360px;
+}
+
+.purchase-right .summary-box + .summary-box{
+  border-top: none;
+  padding-top: 10px;
+}
+
+/* 商品カード（左上） */
+.purchase-item-card{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  padding-bottom: 18px;
+  border-bottom: 2px solid #999;
+  margin-bottom: 18px;
+}
+
+.purchase-item-card .thumb{
+  width: 180px;
+  height: 180px;
+  background: #eee;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.purchase-item-card .thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.purchase-left{
+  font-size: 14px;
+}
+
+.purchase-item-card .meta .name{
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.purchase-item-card .meta .price{
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.block-title{
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.shipping-line,
+.select,
+.summary-row{
+  font-size: 14px;
+}
+
+.purchase-left .block{
+  padding: 18px 0;
+  border-bottom: 2px solid #999;
+}
+
+.block-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.link{
+  font-size: 12px;
+  color: #0073cc;
+  text-decoration: none;
+}
+
+/* select */
+.select{
+  width: 240px;
+  padding: 6px 8px;
+}
+
+.summary-box{
+  border: 2px solid #999;
+  padding: 14px;
+  margin-bottom: 0px;
+}
+
+.summary-row{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+/* 購入ボタン */
+.actions{
+  margin-top: 16px;
+}
+
+.btn-primary{
+  width: 100%;
+  font-size: 14px;
+  padding: 13px 0;
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:disabled{
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.warn{
+  margin: 12px 0 0;
+  color: #c00;
+  font-size: 13px;
+}
+
+/* =========================
+  Purchase Address Page
+========================= */
+.purchase-address{
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.purchase-address .page-title{
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.purchase-address .block{
+  margin-bottom: 18px;
+}
+
+.purchase-address .label{
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.purchase-address .input{
+  width: 100%;
+  height: 44px;
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.purchase-address .btn-primary{
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* スマホ時は縦並び */
+@media (max-width: 900px){
+  .purchase-left{
+    padding-right: 0;
+  }
+  .purchase-right{
+    position: static;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .select{
+    width: 100%;
+  }
+}

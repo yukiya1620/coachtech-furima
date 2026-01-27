@@ -1,0 +1,56 @@
+.verify{
+  padding: 56px 16px;
+}
+
+.verify-card{
+  max-width: 760px;
+  margin: 60px auto 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.verify-text{
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.verify-success{
+  font-size: 13px;
+  color: #0a7;
+  margin-bottom: 14px;
+}
+
+.verify-btn{
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid #9a9a9a;
+  background: #efefef;
+  color: #333;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.verify-btn:hover{
+  background: #e7e7e7;
+}
+
+.verify-resend{
+  margin-top: 14px;
+}
+
+.verify-link{
+  border: none;
+  background: none;
+  color: #1a73e8;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}

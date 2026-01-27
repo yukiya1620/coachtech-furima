@@ -1,0 +1,144 @@
+.mypage {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 16px 80px;
+}
+
+.mypage-section{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mypage-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.mypage .tab.is-active {
+  color: #ff2f2f;
+}
+
+.mypage .tab.is-active::after {
+  background: #ff2f2f;
+}
+
+.mypage .tabs {
+  margin: 18px 0 24px;
+}
+
+.mypage-subtitle {
+  max-width: 1000px;
+  margin: 24px auto 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mypage-empty {
+  color: #777;
+}
+
+.profile-edit {
+  display: inline-block;
+  margin-top: 12px;
+  color: #d33;
+  text-decoration: none;
+}
+
+.mypage-item__info {
+  margin-top: 8px;
+}
+
+.mypage-items{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.mypage-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mypage-item__thumb{
+  position: relative;
+  overflow: hidden;
+  background: #f2f2f2;
+  aspect-ratio: 1 / 1;
+}
+
+.mypage-item__thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.badge-sold {
+  position: absolute;
+  top: 12px;
+  left: -46px;
+  width: 160px;
+  padding: 8px 0;
+  text-align: center;
+  background: #e60023;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transform: rotate(-45deg);
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+.mypage-avatar{
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  overflow: hidden;
+}
+
+.mypage-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mypage-profile{
+  max-width: 1000px;
+  margin: 24px auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mypage-profile__edit{
+  padding: 8px 14px;
+  border: 1.5px solid #ff2f2f;
+  color: #ff2f2f;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mypage-profile__left{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mypage-username{
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (max-width: 900px){
+  .mypage-items{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px){
+  .mypage-items{ grid-template-columns: repeat(2, 1fr); }
+}

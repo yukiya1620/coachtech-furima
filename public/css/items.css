@@ -1,0 +1,38 @@
+/* Items Page */
+.items-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* Empty message */
+.items-empty {
+  grid-column: 1 / -1;
+  color: #777;
+  font-size: 14px;
+  padding: 24px 0;
+}
+
+.item-thumb{
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-sold{
+  position: absolute;
+  top: 12px;
+  left: -46px;
+  width: 160px;
+  padding: 8px 0;
+  text-align: center;
+
+  background: #e60023; /* 赤 */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  transform: rotate(-45deg);
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
