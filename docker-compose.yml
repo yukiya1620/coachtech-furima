@@ -1,0 +1,41 @@
+services:
+  app:
+    build: ./docker/php
+    container_name: furima_app
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+
+  web:
+    image: nginx:1.25-alpine
+    container_name: furima_web
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    container_name: furima_db
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Tokyo
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      -  "18025:8025"
+      -  "11025:1025"
+
+volumes:
+  db-data:

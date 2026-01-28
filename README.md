@@ -61,7 +61,8 @@ docker compose exec app php artisan migrate --seed
 ```
 
 ※注意
-docker compose down -v はDBのデータ（volume）を削除します。DBが消えた場合は上記 migrate:fresh --seed で復旧できます。
+docker compose down -v はDBのデータ（volume）を削除します。
+DBを作り直す場合は php artisan migrate:fresh --seed を実行してください
 
 ### 6.ストレージ公開 (画像表示)
 ```bash
@@ -69,7 +70,7 @@ docker compose exec app php artisan storage:link
 ```
 ### 7.アプリ起動確認
  - アプリ　 : http://localhost:8080
- - MailHog : http://localhost:8025
+ - MailHog : http://localhost:18025
 
 ---
 
@@ -78,7 +79,7 @@ docker compose exec app php artisan storage:link
 ### 会員登録 → メール認証 (MailHog)
 1. 画面から会員登録を行う
 2. メール認証誘導画面が表示される
-3. MailHog (http://localhost:8025) を開き、届いたメールの認証リンクをクリック
+3. MailHog (http://localhost:18025) を開き、届いたメールの認証リンクをクリック
 4. 認証完了後、プロフィール設定/マイページ関連フローへ遷移
 ※MailHogはローカル開発向けのメール確認ツールのため、画面表示は英語になります。
 
