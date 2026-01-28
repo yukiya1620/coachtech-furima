@@ -52,12 +52,12 @@ docker compose exec app composer install
 ```
 ### 4.環境変数
 ```bash
-cp .env.example .env
+cp src/.env.example src/.env
 docker compose exec app php artisan key:generate
 docker compose exec app php artisan optimize:clear
 ```
 ※.env は src/.env を使用します。
-.env（src/.env）を以下の通り設定してください。
+src/.env を以下の通り設定してください。
 
 APP_URL=http://localhost:8080
 DB_HOST=db
