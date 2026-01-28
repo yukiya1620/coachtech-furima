@@ -1,0 +1,175 @@
+/* =========================
+  Sell Page
+========================= */
+.sell-page {
+  padding: 32px 16px;
+}
+
+.sell-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sell-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 24px;
+}
+
+.sell-form {
+  display: block;
+}
+
+.sell-select {
+  padding: 12px;
+}
+
+/* Blocks */
+.sell-block {
+  margin-bottom: 20px;
+}
+
+.sell-block-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+/* Section headings */
+.sell-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.sell-divider {
+  height: 1px;
+  background: #a8a8a8;
+  margin: 10px 0 16px;
+}
+
+.sell-section-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 22px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #a8a8a8;
+}
+
+/* Inputs */
+.sell-input,
+.sell-select,
+.sell-textarea {
+  width: 100%;
+  border: 1px solid #a8a8a8;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.sell-input:focus,
+.sell-select:focus,
+.sell-textarea:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.sell-textarea {
+  resize: vertical;
+}
+
+/* Image upload */
+.image-upload {
+  width: 100%;
+  height: 160px;
+  border: 2px dashed #b5b5b5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #fff;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.image-preview.is-visible {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.image-input {
+  display: none;
+}
+
+.image-button {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #ff5a5a;
+  border-radius: 6px;
+  color: #ff5a5a;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Category tags */
+.category-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+
+.category-tag{
+  display: inline-block;
+}
+
+.category-tag input{
+  display: none;
+}
+
+.category-tag span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border: 1px solid #ff5a5a;
+  border-radius: 999px;
+  color: #ff5a5a;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-tag input:checked + span{
+  background: #ff5a5a;
+  color: #fff;
+}
+
+/* Submit */
+.sell-submit {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #ff5a5a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sell-submit:hover {
+    opacity: 0.9;
+}

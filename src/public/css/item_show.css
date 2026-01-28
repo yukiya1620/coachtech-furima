@@ -1,0 +1,256 @@
+.item-show__info{
+  flex: 0 0 420px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-show__inner{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.item-show__image{
+  flex: 0 0 420px;
+  max-width: 420px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin: 0;
+}
+
+.item-show__image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.item-show__name,
+.item-show__brand,
+.item-show__price,
+.item-show__counts,
+.item-show__actions,
+.item-show__description,
+.item-show__meta,
+.item-show__comments,
+.item-show__comment-form{
+  max-width: 420px;
+  width: 100%;
+}
+
+.item-show__description,
+.item-show__meta,
+.item-show__comments,
+.item-show__comment-form{
+  margin-top: 24px;
+}
+
+/* 小見出し */
+.item-show__description h2,
+.item-show__meta h2,
+.item-show__comments h2{
+  font-size: 18px;
+  font-weight:700;
+  margin-bottom: 12px;
+}
+
+.item-show__description p{
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.item-show__meta-list{
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  row-gap: 10px;
+  column-gap: 16px;
+  font-size: 13px;
+}
+.item-show__meta-list dt{
+  font-weight: bold;
+  color: #333;
+}
+.item-show__meta-list dd{
+  margin: 0;
+  color: #333;
+}
+
+.item-show__comments h2{
+  font-size: 16px;
+  margin-top: 32px;
+}
+
+.item-show__comment-form textarea{
+  width: 100%;
+  max-width: 420px;
+  height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  resize: none;
+}
+
+.item-show__comment-list{
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.item-show__comment{
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+}
+
+.item-show__comment-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.item-show__comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.comment-label{
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.btn-comment.is-disabled{
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.btn-comment{
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin-top: 12px;
+  border-radius: 4px;
+  border: none;
+  background: #d33;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-buy{
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: 44px;
+  text-align: center;
+
+  background: #d33;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.item-show__counts{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.item-show__counts form{
+  margin: 0;
+}
+
+.item-show__actions{
+  margin-top: 12px;
+}
+
+.item-show__categories{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.item-show__category{
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #eee;
+  font-size: 12px;
+}
+
+.icon-button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-button__inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.icon-img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* ログイン前 */
+.icon-button.is-disabled{
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* アイコン */
+.icon{
+  font-size: 30px;
+  line-height: 1;
+}
+
+.icon-heart.is-active{
+  color: #e53935;
+}
+
+.icon-button__inner:hover .icon{
+  transform: scale(1.1);
+}
+
+/* 数字 */
+.icon-count{
+  font-size: 12px;
+  line-height: 1;
+  color: #333;
+}
+
+
+/* ミュート文 */
+.item-show__muted{
+  font-size: 12px;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .item-show__image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
