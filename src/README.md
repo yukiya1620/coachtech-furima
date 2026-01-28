@@ -40,52 +40,37 @@
 ### 1. リポジトリをクローン
 ```bash
 git clone git@github.com:yukiya1620/coachtech-furima.git
-cd coachtech-furima
+cd coachtech-furima/src
 ```
 ### 2. コンテナ起動
 ```bash
 docker compose up -d --build
 ```
-### 3. 依存インストール
+### 3.依存インストール
 ```bash
 docker compose exec app composer install
 ```
-### 4. 環境変数
+### 4.環境変数
 ```bash
-cp src/.env.example src/.env
+cp .env.example .env
 docker compose exec app php artisan key:generate
-docker compose exec app php artisan optimize:clear
 ```
-※.env は src/.env を使用します。
-※.env (src/.env) を以下の通り設定してください。
-
-APP_URL=http://localhost:8080
-DB_HOST=db
-DB_DATABASE=laravel
-DB_USERNAME=laravel
-DB_PASSWORD=laravel
-
-### 5. マイグレーション / シーディング
+### 5.マイグレーション / シーディング
 ```bash
-docker compose exec app php artisan migrate:fresh --seed
+docker compose exec app php artisan migrate --seed
 ```
-※注意
-docker compose down -v はDBのデータ（volume）を削除します。DBが消えた場合は上記 migrate:fresh --seed で復旧できます。
 
-### 6. ストレージ公開 (画像表示)
+※注意
+docker compose down -v はDBのデータ（volume）を削除します。
+DBを作り直す場合は php artisan migrate:fresh --seed を実行してください
+
+### 6.ストレージ公開 (画像表示)
 ```bash
 docker compose exec app php artisan storage:link
 ```
-### 7. アプリ起動確認
+### 7.アプリ起動確認
  - アプリ　 : http://localhost:8080
- - MailHog : http://localhost:8025
-
-### 8. トラブルシューティング
-権限やキャッシュディレクトリ不足が起こった場合
-```bash
-docker compose exec app sh -lc "mkdir -p storage/logs storage/framework/{cache,data,sessions,testing,views} bootstrap/cache && chmod -R 775 storage bootstrap/cache"
-docker compose exec app php artisan optimize:clear
-```
+ - MailHog : http://localhost:18025
 
 ---
 
@@ -94,7 +79,7 @@ docker compose exec app php artisan optimize:clear
 ### 会員登録 → メール認証 (MailHog)
 1. 画面から会員登録を行う
 2. メール認証誘導画面が表示される
-3. MailHog (http://localhost:8025) を開き、届いたメールの認証リンクをクリック
+3. MailHog (http://localhost:18025) を開き、届いたメールの認証リンクをクリック
 4. 認証完了後、プロフィール設定/マイページ関連フローへ遷移
 ※MailHogはローカル開発向けのメール確認ツールのため、画面表示は英語になります。
 
@@ -113,9 +98,8 @@ docker compose exec app php artisan optimize:clear
  - Stripe Checkout に遷移
  - 成功URL : purchase/{item}/success
  - キャンセルURL : purchase/{item}/cancel
-   ※このアプリは config('services.stripe.secret') を参照します
-   ※Stripeを利用する場合は .env に STRIPE_SECRET=sk_test_... を設定(config/services.php の stripe.secret に紐づく)
-   ※Stripe未設定の場合はクレジットカード払いを選択して購入するとエラーメッセージを表示し、コンビニ払いを案内します。
+   ※Stripeを利用する場合は .env の Stripe設定 (例 : STRIPE_SECRET) が必要です。
+   ※Stripe未設定の場合はクレジットカード払いは選択できるが、購入時にエラーメッセージを表示してコンビニ払いを案内します。
    ※ローカルで購入完了まで確認する場合は、コンビニ払いを利用するとスムーズです。
 
 ### PHPUnit (自動テスト)
@@ -123,14 +107,6 @@ docker compose exec app php artisan optimize:clear
 ### 実行コマンド
 ```bash
 docker compose exec app php artisan test
-```
-※初回のみ、テスト用DB laravel_test が必要です。作成する場合 :
-```bash
-docker compose exec db mysql -uroot -p -e "
-CREATE DATABASE IF NOT EXISTS laravel_test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON laravel_test.* TO 'laravel'@'%';
-FLUSH PRIVILEGES;
-"
 ```
 ### 実行結果
  - Feature / Unit テスト : 28 tests Passed
